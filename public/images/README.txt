@@ -1,0 +1,1 @@
+Place future Top Flight Security photos in this folder. Update the image paths in src/siteConfig.ts when replacing placeholders.
