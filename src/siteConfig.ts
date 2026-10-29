@@ -8,13 +8,13 @@ export const siteConfig = {
   email: 'markgourneau1963@gmail.com',
   facebookUrl: 'https://www.facebook.com/p/TOP-Flight-Security-100057310125362/',
   formspreeEndpoint: 'https://formspree.io/f/your-form-id',
-  videoUrl: '/images/video.mp4',
+  videoUrl: '/video.mp4',
   images: {
     logo: '/tfs_eagle_logo.png',
     logoAlternate: '/tfs_eagle_logo copy.png',
-    serviceFlyer: '/images/FB_IMG_1793247093931.jpg',
+    serviceFlyer: 'images/FB_IMG_1793247093931.jpg',
     brandFlyer: '/images/FB_IMG_1793247294999.jpg',
-    heroFallback: '/images/hero_background.jpg',
+    heroFallback: '/hero_background.jpg',
     about: 'https://images.pexels.com/photos/30516933/pexels-photo-30516933.jpeg?auto=compress&cs=tinysrgb&w=1400',
     team: 'https://images.pexels.com/photos/7714726/pexels-photo-7714726.jpeg?auto=compress&cs=tinysrgb&w=1800',
     members: [
