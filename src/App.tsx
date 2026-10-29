@@ -14,7 +14,6 @@ import {
   Menu,
   Phone,
   Quote,
-  ShieldBan,
   ShieldCheck,
   Sparkles,
   Users,
@@ -57,7 +56,7 @@ function App() {
       <header className="site-header">
         <div className="container nav-wrap">
           <a className="brand" href="#top" aria-label="Top Flight Security home">
-            <span className="brand-mark"><ShieldBan size={25} strokeWidth={1.8} /></span>
+            <img className="brand-logo" src={siteConfig.images.logo} alt="" />
             <span className="brand-copy"><span>Top Flight</span><strong>Security</strong></span>
           </a>
           <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`}>
@@ -73,9 +72,7 @@ function App() {
       <main id="top">
         <section className="hero-section">
           <div className="hero-media">
-            {!videoFailed && <video autoPlay muted loop playsInline poster={siteConfig.images.heroFallback} onError={() => setVideoFailed(true)}>
-              <source src={siteConfig.videoUrl} type="video/mp4" />
-            </video>}
+            {!videoFailed && <video autoPlay muted loop playsInline poster={siteConfig.images.heroFallback} src={siteConfig.videoUrl} onError={() => setVideoFailed(true)} />}
             <img className={`hero-fallback ${videoFailed ? 'is-visible' : ''}`} src={siteConfig.images.heroFallback} alt="Security professional on patrol" />
           </div>
           <div className="hero-overlay" />
@@ -103,7 +100,7 @@ function App() {
 
         <section id="about" className="section about-section">
           <div className="container about-grid">
-            <div className="about-image-wrap"><img src={siteConfig.images.about} alt="Security team members standing together" /><div className="image-stamp"><ShieldBan size={22} /><span>Top Flight<br /><b>Security</b></span></div></div>
+            <div className="about-image-wrap"><img src={siteConfig.images.about} alt="Security team members standing together" /><div className="image-stamp"><img className="stamp-logo" src={siteConfig.images.logo} alt="" /><span>Top Flight<br /><b>Security</b></span></div></div>
             <div className="about-copy"><div className="eyebrow"><span className="eyebrow-line" /> Who we are</div><h2>Security that lets you <em>stay in the moment.</em></h2><p>When you are hosting a celebration, running a business, or protecting your home, you should not have to carry every concern yourself. We bring a calm, capable presence so you can focus on what matters.</p><p>Based in Sunnyside, Top Flight Security serves the Yakima Valley and surrounding communities with thoughtful planning, professional personnel, and real local commitment.</p><div className="check-list"><span><Check size={15} /> People-first service</span><span><Check size={15} /> Clear communication</span><span><Check size={15} /> Responsive coverage</span></div><a className="text-link" href="#contact">Talk with our team <ArrowRight size={16} /></a></div>
           </div>
         </section>
@@ -121,7 +118,7 @@ function App() {
         <section id="contact" className="section contact-section"><div className="container contact-layout"><div className="contact-copy"><div className="eyebrow light"><span className="eyebrow-line" /> Start a conversation</div><h2>Let’s make a <em>safe plan.</em></h2><p>Tell us a little about what you are protecting. We will follow up with thoughtful next steps and a clear quote.</p><div className="contact-details"><a href={siteConfig.phoneHref}><Phone size={17} /><span><small>Call us anytime</small>{siteConfig.phone}</span></a><a href={`mailto:${siteConfig.email}`}><Mail size={17} /><span><small>Email our team</small>{siteConfig.email}</span></a><div><MapPin size={17} /><span><small>Based in</small>{siteConfig.location}</span></div></div></div><div className="form-card">{submitted ? <div className="success-message"><span className="success-icon"><Check size={25} /></span><h3>Your message is ready to send.</h3><p>Add your Formspree form ID in the site configuration to connect this form and start receiving inquiries.</p></div> : <form action={siteConfig.formspreeEndpoint} method="POST" onSubmit={handleSubmit}><div className="form-row"><label>Full name<input required name="name" type="text" placeholder="Your full name" /></label><label>Phone number<input required name="phone" type="tel" placeholder="(509) 000-0000" /></label></div><div className="form-row"><label>Email address<input required name="email" type="email" placeholder="you@example.com" /></label><label>Event type<select required name="eventType" defaultValue=""><option value="" disabled>Select one</option><option>Wedding or quinceañera</option><option>Birthday or private event</option><option>Wine tasting</option><option>Concert or special event</option><option>Business or home monitoring</option><option>Other</option></select></label></div><label>Describe your event<textarea required name="message" rows={4} placeholder="Date, location, guest count, and what you have in mind..."></textarea></label><div className="consent-list"><label className="consent"><input required name="phoneConsent" type="checkbox" /> <span>I consent to being contacted by phone about my inquiry.</span></label><label className="consent"><input required name="emailConsent" type="checkbox" /> <span>I consent to being contacted by email about my inquiry.</span></label></div><button className="button button-primary form-submit" type="submit">Request your quote <ArrowRight size={17} /></button><p className="form-note">Your information stays with our team and is only used to respond to your request.</p></form>}</div></div></section>
       </main>
 
-      <footer className="site-footer"><div className="container footer-top"><a className="brand footer-brand" href="#top"><span className="brand-mark"><ShieldBan size={23} strokeWidth={1.8} /></span><span className="brand-copy"><span>Top Flight</span><strong>Security</strong></span></a><p>Protecting what matters across the Yakima Valley.</p><div className="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a><a href={`mailto:${siteConfig.email}`} aria-label="Email Top Flight Security"><Mail size={18} /></a><a href={siteConfig.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook size={18} /></a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Top Flight Security. All rights reserved.</span><span>Serving Sunnyside, WA & surrounding areas</span><span>Created by: <a className="creator-link" href="https://ctechsolution.tech" target="_blank" rel="noreferrer">Community Tech Solutions</a></span></div></footer>
+      <footer className="site-footer"><div className="container footer-top"><a className="brand footer-brand" href="#top"><img className="brand-logo" src={siteConfig.images.logo} alt="" /><span className="brand-copy"><span>Top Flight</span><strong>Security</strong></span></a><p>Protecting what matters across the Yakima Valley.</p><div className="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a><a href={`mailto:${siteConfig.email}`} aria-label="Email Top Flight Security"><Mail size={18} /></a><a href={siteConfig.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook size={18} /></a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Top Flight Security. All rights reserved.</span><span>Serving Sunnyside, WA & surrounding areas</span><span>Created by: <a className="creator-link" href="https://ctechsolution.tech" target="_blank" rel="noreferrer">Community Tech Solutions</a></span></div></footer>
     </div>
   );
 }

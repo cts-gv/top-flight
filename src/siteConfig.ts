@@ -1,3 +1,10 @@
+import logoLight from './assets/logo-light.png';
+import logoDark from './assets/logo-dark.png';
+import heroFallback from './assets/hero_background.jpg';
+import serviceFlyer from './assets/service-flyer.jpg';
+import brandFlyer from './assets/brand-flyer.jpg';
+import heroVideo from './assets/video.mp4';
+
 export const siteConfig = {
   businessName: 'Top Flight Security',
   shortName: 'TFS',
@@ -8,13 +15,13 @@ export const siteConfig = {
   email: 'markgourneau1963@gmail.com',
   facebookUrl: 'https://www.facebook.com/p/TOP-Flight-Security-100057310125362/',
   formspreeEndpoint: 'https://formspree.io/f/your-form-id',
-  videoUrl: '/video.mp4',
+  videoUrl: heroVideo,
   images: {
-    logo: '/tfs_eagle_logo.png',
-    logoAlternate: '/tfs_eagle_logo copy.png',
-    serviceFlyer: 'images/FB_IMG_1793247093931.jpg',
-    brandFlyer: '/images/FB_IMG_1793247294999.jpg',
-    heroFallback: '/hero_background.jpg',
+    logo: logoLight,
+    logoDark,
+    serviceFlyer,
+    brandFlyer,
+    heroFallback,
     about: 'https://images.pexels.com/photos/30516933/pexels-photo-30516933.jpeg?auto=compress&cs=tinysrgb&w=1400',
     team: 'https://images.pexels.com/photos/7714726/pexels-photo-7714726.jpeg?auto=compress&cs=tinysrgb&w=1800',
     members: [
